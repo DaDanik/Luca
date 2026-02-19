@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Servizi - Studio Medico Integrato</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        button, a, .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header (stesso di index.html) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-900">Studio Medico Integrato</h1>
+                        <p class="text-xs text-emerald-600">Fisioterapia & Odontoiatria di Eccellenza</p>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="font-medium text-gray-700 hover:text-emerald-600">Home</a>
+                    <a href="servizi.html" class="relative font-medium text-emerald-600">
+                        Servizi
+                        <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-600 rounded-full"></span>
+                    </a>
+                    <a href="chi-siamo.html" class="font-medium text-gray-700 hover:text-emerald-600">Chi Siamo</a>
+                    <a href="contatti.html" class="font-medium text-gray-700 hover:text-emerald-600">Contattaci</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMenu()" class="md:hidden p-2 rounded-lg hover:bg-emerald-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <a href="index.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Home</a>
+                <a href="servizi.html" class="block py-3 px-4 rounded-lg bg-emerald-50 text-emerald-600 font-medium">Servizi</a>
+                <a href="chi-siamo.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Chi Siamo</a>
+                <a href="contatti.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Contattaci</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                I Nostri Servizi
+            </h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Offriamo una gamma completa di servizi specializzati in fisioterapia e odontoiatria per garantire il tuo benessere a 360 gradi
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto space-y-16">
+                
+                <!-- Fisioterapia -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-2xl overflow-hidden border border-emerald-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Info -->
+                        <div class="p-10 lg:p-12">
+                            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 hover:scale-110 hover:rotate-6 transition-all">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-width="2"></polyline>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-900 mb-4">Fisioterapia</h2>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                                Servizi specializzati per il recupero funzionale e il benessere fisico
+                            </p>
+                            <a href="contatti.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                                Prenota una Visita
+                            </a>
+                        </div>
+                        
+                        <!-- Lista Servizi -->
+                        <div class="bg-white/50 backdrop-blur-sm p-10 lg:p-12">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Servizi Offerti:</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Fisioterapia ortopedica e traumatologica</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Riabilitazione post-operatoria</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Terapia manuale</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Massoterapia</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Ginnastica posturale</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Elettroterapia e ultrasuoni</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Odontoiatria -->
+                <div class="bg-gradient-to-br from-teal-50 to-green-50 rounded-3xl shadow-2xl overflow-hidden border border-emerald-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Lista Servizi -->
+                        <div class="bg-white/50 backdrop-blur-sm p-10 lg:p-12">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Servizi Offerti:</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Igiene e prevenzione</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Odontoiatria conservativa</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Implantologia</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Ortodonzia</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Sbiancamento dentale</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                                    </svg>
+                                    <span class="text-gray-700 text-lg">Protesi dentarie</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="p-10 lg:p-12">
+                            <div class="bg-gradient-to-br from-teal-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 hover:scale-110 hover:rotate-6 transition-all">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-900 mb-4">Odontoiatria</h2>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                                Cure dentali complete per un sorriso sano e luminoso
+                            </p>
+                            <a href="contatti.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-500 to-green-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+                                Prenota una Visita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-2.5 rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Studio Medico Integrato</h3>
+                            <p class="text-sm text-gray-400">Fisioterapia & Odontoiatria di Eccellenza</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-emerald-400">Home</a></li>
+                        <li><a href="servizi.html" class="text-gray-400 hover:text-emerald-400">Servizi</a></li>
+                        <li><a href="chi-siamo.html" class="text-gray-400 hover:text-emerald-400">Chi Siamo</a></li>
+                        <li><a href="contatti.html" class="text-gray-400 hover:text-emerald-400">Contattaci</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">I Nostri Servizi</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Fisioterapia Specializzata</li>
+                        <li>Odontoiatria Generale</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 Studio Medico Integrato. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
