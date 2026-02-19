@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Medico Integrato - Fisioterapia & Odontoiatria</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Animazioni personalizzate */
+        @keyframes blob {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Transizioni fluide */
+        button, a, .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-900">Studio Medico Integrato</h1>
+                        <p class="text-xs text-emerald-600">Fisioterapia & Odontoiatria di Eccellenza</p>
+                    </div>
+                </a>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="relative font-medium text-emerald-600">
+                        Home
+                        <span class="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-600 rounded-full"></span>
+                    </a>
+                    <a href="servizi.html" class="font-medium text-gray-700 hover:text-emerald-600">Servizi</a>
+                    <a href="chi-siamo.html" class="font-medium text-gray-700 hover:text-emerald-600">Chi Siamo</a>
+                    <a href="contatti.html" class="font-medium text-gray-700 hover:text-emerald-600">Contattaci</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMenu()" class="md:hidden p-2 rounded-lg hover:bg-emerald-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <a href="index.html" class="block py-3 px-4 rounded-lg bg-emerald-50 text-emerald-600 font-medium">Home</a>
+                <a href="servizi.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Servizi</a>
+                <a href="chi-siamo.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Chi Siamo</a>
+                <a href="contatti.html" class="block py-3 px-4 rounded-lg text-gray-700 hover:bg-emerald-50 font-medium">Contattaci</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50">
+        <!-- Decorazioni animate -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 pt-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg mb-8">
+                    <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <span class="text-sm font-medium text-gray-700">Centro Medico di Eccellenza</span>
+                </div>
+
+                <!-- Titolo -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
+                    Il Tuo Benessere, la Nostra Missione
+                </h1>
+
+                <!-- Sottotitolo -->
+                <p class="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed">
+                    Centro medico specializzato in fisioterapia e odontoiatria con un team di professionisti qualificati al tuo servizio
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contatti.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                        Prenota una Visita
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="servizi.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-emerald-600 text-emerald-600 rounded-lg font-semibold hover:bg-emerald-50 shadow-lg hover:scale-105 transition-all">
+                        I Nostri Servizi
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-emerald-600 rounded-full flex justify-center">
+                <div class="w-1.5 h-3 bg-emerald-600 rounded-full mt-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Perché Sceglierci
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Scopri cosa ci rende il centro medico di riferimento per il tuo benessere
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="group bg-gradient-to-br from-white to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all border border-emerald-100">
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                        Professionisti Qualificati
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Team di esperti certificati con anni di esperienza nel settore medico
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group bg-gradient-to-br from-white to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all border border-emerald-100">
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                        Tecnologie Avanzate
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Utilizziamo le più moderne tecnologie per garantire trattamenti efficaci
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group bg-gradient-to-br from-white to-emerald-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all border border-emerald-100">
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                        Approccio Personalizzato
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ogni paziente riceve un piano di trattamento su misura per le sue esigenze
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Pronto a Prenderti Cura della Tua Salute?
+            </h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                Contattaci oggi per prenotare la tua visita. Il nostro team è pronto ad accoglierti.
+            </p>
+            <a href="contatti.html" class="inline-flex items-center px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold shadow-2xl hover:bg-gray-100 hover:scale-105 transition-all">
+                Contattaci Ora
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-2.5 rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Studio Medico Integrato</h3>
+                            <p class="text-sm text-gray-400">Fisioterapia & Odontoiatria di Eccellenza</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Il tuo centro medico di fiducia per fisioterapia e odontoiatria. Professionalità e cura al servizio del tuo benessere.
+                    </p>
+                </div>
+
+                <!-- Link Rapidi -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-emerald-400 transition-colors">Home</a></li>
+                        <li><a href="servizi.html" class="text-gray-400 hover:text-emerald-400 transition-colors">Servizi</a></li>
+                        <li><a href="chi-siamo.html" class="text-gray-400 hover:text-emerald-400 transition-colors">Chi Siamo</a></li>
+                        <li><a href="contatti.html" class="text-gray-400 hover:text-emerald-400 transition-colors">Contattaci</a></li>
+                    </ul>
+                </div>
+
+                <!-- Servizi -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">I Nostri Servizi</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Fisioterapia Specializzata</li>
+                        <li>Riabilitazione Motoria</li>
+                        <li>Odontoiatria Generale</li>
+                        <li>Igiene e Prevenzione</li>
+                        <li>Implantologia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2026 Studio Medico Integrato. Tutti i diritti riservati.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
